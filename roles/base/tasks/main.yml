@@ -1,0 +1,13 @@
+---
+
+- name: install updates (Ubuntu)
+  tags: setup
+  apt:
+    upgrade: dist
+    update_cache: yes
+
+- name: add ssh key for simone
+  tags: setup
+  authorized_key:
+    user: simone
+    key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDEUvpMFE6US0qSd5kW8J4ho1h80mTunWQIAmEXBwDR22sAhSk4uRpBJcZIRB/yH9JZNsK9USt6uxYWgKJ+3JhpJvF/dAhqXlEQOg7KzH68S+b4o9//2RMd3NP0Bm7wcQD+4n0/gUbaLwk7CT+Co+/CPjmuEU2D1GDJ0XiylRI6P96c08YsCPs9jKSeODAoCax9KzaOKuChZ/OZl5SWiLwjOTsxnwzYTRXJbhFs0Sevlg3FJ1UJmOQznePb0s50h9OtW5KpDF0MFRtEUFfViuwVsJMX2GfdayNHf3KIZXURe/MKxQtRiBgHS5Yqov7/1yq7ctkZjbtrfhctnNjqxSCQBvG7+RaplPZqhnuLfg+VE0vB6EkADYxi3n8n/fLUbDnpnaFQklyUmOhfSbg7UV5y4RB5851m0RnspKwuH6TDMQ9Ttp4UCyAk0TGTRtsPiYYSFZK/v/oC/ZlN98IqQcM6/QyNpb+7B3LVPXHTe1ksuA4AW0MEmmnnAvwy4XHFsMjCHyBHTkmeVOG/05TQ31ROuzDU23xPttT+XS9HwWWYe6UtnnlmDVs1O+S8VX5kc2x+yEq2l7P9Y3giFY7/YOCInjyDTvIsBQQp4390SUDwrDGPKmPc7MFlydsgCRpX1jePJg88pNaZFQxMevG7n2DYWB8FDcQg0WbTxx6yztN34Q== aksihlvthumar@gmail.com"

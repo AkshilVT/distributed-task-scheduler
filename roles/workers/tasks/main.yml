@@ -1,0 +1,36 @@
+---
+
+- name: copy zip file
+  tags: work
+  copy:
+    src: "{{ file_name }}"
+    dest: /home/simone/worker/
+    owner: root
+    group: root
+    mode: 0644
+
+- name: unzip archive
+  tags: work
+  unarchive:
+    src: /home/simone/worker/{{ file_name }}
+    dest: /home/simone/worker/
+    remote_src: yes
+    mode: 0755
+    owner: root
+    group: root
+
+- name: execute shell script
+  tags: work
+  command: sh /home/simone/worker/main.sh
+  register: result
+
+- name: return output of shell script
+  tags: work
+  debug:
+    msg: "{{ result.stdout }}"
+
+- name: removing contents of tasks
+  tags: work
+  ansible.builtin.file:
+    state: absent
+    path: /home/simone/worker/
